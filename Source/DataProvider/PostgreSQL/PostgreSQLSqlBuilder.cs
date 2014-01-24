@@ -27,7 +27,7 @@ namespace LinqToDB.DataProvider.PostgreSQL
 				attr != null ?
 					attr.SequenceName :
 					Convert(
-						string.Format("{0}_{1}_seq", into.PhysicalName, into.GetIdentityField().PhysicalName),
+						string.Format("{0}.{1}_{2}_seq", into.Owner, into.PhysicalName, into.GetIdentityField().PhysicalName),
 						ConvertType.NameToQueryField);
 
 			AppendIndent()
